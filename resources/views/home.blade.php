@@ -14,13 +14,13 @@
 
     var channel = pusher.subscribe('my-channel');
     channel.bind('my-event', function(data) {
-      
+     
         var tr = `
         <div class="alert" role="alert"  style="background-color: rgb(248, 215, 218);">
-  <h4 class="alert-heading"><b>Well done!</b></h4>
-  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <h4 class="alert-heading"><b>ALERTA CIUDADELA CANARIAS!</b></h4>
+  <p>`+data.message+`</p>
   <hr>
-  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+  <p class="mb-0">Sistema SEGAFF Deaplics. Lo mejor en tecnología para la seguridad !!!.
   <button type="button" class=" text-white btn btn-primary float-right" data-dismiss="alert" aria-label="Close">
   Cerrar
   </button>
