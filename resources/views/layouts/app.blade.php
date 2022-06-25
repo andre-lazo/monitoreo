@@ -112,7 +112,7 @@
 <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{asset('css/adminlte.css')}}">
-<link rel="shortcut icon" href="{{asset('img/LOGO2.png')}}">
+<link rel="shortcut icon" href="{{asset('img/logo.png')}}">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
        <style>
             body {
