@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{asset('css/volt.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('css/volt.css')}}">
 <style>
     .body{
        background: url('https://cdn.pixabay.com/photo/2018/08/08/12/38/internet-3592056_960_720.jpg') no-repeat center center  fixed;
@@ -8,7 +8,7 @@
     </style>
 <main>
     <title>DEAPLICS</title>
-    <!-- Section -->
+    
     <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center body">
         <div class="container " style="opacity: 85%">
             {{-- <p class="text-center"><a href="{{ route('dashboard') }}" class="text-gray-700"><i
@@ -25,7 +25,7 @@
                       
                         </div>
                         <form wire:submit.prevent="login" action="#" class="mt-4" method="POST">
-                            <!-- Form -->
+                       
                             <div class="form-group mb-4">
                                <center> <label  for="email">Email</label></center>
                                 <div class="input-group">
@@ -43,9 +43,9 @@
                                 @error('email') <div wire:key="form" class="invalid-feedback"> {{$message}} </div>
                                 @enderror
                             </div>
-                            <!-- End of Form -->
+                           
                             <div class="form-group">
-                                <!-- Form -->
+                              
                                 <div class="form-group mb-4">
                                  <center>
                                  <label for="password">Password</label>
@@ -63,7 +63,7 @@
                                     </div>
                                     @error('password') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                 </div>
-                                <!-- End of Form -->
+                             
                                 <div class="d-flex justify-content-between align-items-top mb-4">
                                     <div class="form-check">
                                         <input wire:model="remember_me" class="form-check-input" type="checkbox"
@@ -105,4 +105,116 @@
             </div>
         </div>
     </section>
-</main>
+</main> -->
+@extends('layouts.app2')
+
+<style>
+    .prueba{
+             width: 45%;
+ margin-left:27%;
+ margin-top:3%;
+}
+.logo{
+    margin-top:30%;margin-left:15%
+}
+            @media (max-width: 850px) {
+     .prueba{
+             width: 100%;
+             margin:0%;
+         }
+         .logo{
+            margin-top:0;
+         }
+            }   
+</style>
+@section('content')
+
+<div class="prueba "  height="100px" >
+    <div class="row  form-group ">
+        <div class=" col-xs-12 col-lg-6 mt-5 bg-white w-40" style="opacity: 75%">
+            <img class="logo"  src="{{asset('img/logo.png')}}" width="70%">   
+        </div>
+     
+        <div class="col-xs-12 col-lg-6 mt-5  w-70" style="opacity: 80%; background:rgb(223, 222, 222)">
+
+          
+            <div class="">
+                <center><h1 class="mb-0 mt-2" style="font-size:30px">LOGIN</h1></center>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="80" fill="currentColor" class="bi bi-person-fill col-md-12 col-form-label text-md-center mb-0 pb-0" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                              </svg>
+                            <label for="email" class="col-md-12  text-md-center m-0 p-0 h3">{{ __('EMAIL') }}</label>
+
+                            <div class="col-md-12">
+
+                                <input id="email" type="email" class="form-control   @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="80" fill="currentColor" class="bi bi-key-fill col-md-12  text-md-center h3 m-0 p-0" viewBox="0 0 16 16">
+                                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                              </svg>
+                            <label for="password" class="col-md-12  text-md-center h3 m-0 p-0">
+                               
+                                {{ __('PASSWORD') }}</label>
+                   
+
+                            <div class="col-md-12 input-group">
+                                
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <div class="input-group-append">
+            <button id="show_password" class="btn btn-primary  text-white" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+          </div>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-12 offset-md-12">
+                             <center>
+                                <button type="submit" class="btn btn-primary text-white font-weight-bold" style="width: 50%">
+                                    {{ __('INICIAR SESION') }}
+                                </button>
+                             </center>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+<script>
+
+function mostrarPassword(){
+		var cambio = document.getElementById("password");
+		if(cambio.type == "password"){
+			cambio.type = "text";
+			$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+		}else{
+			cambio.type = "password";
+			$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+		}
+	} 
+</script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
