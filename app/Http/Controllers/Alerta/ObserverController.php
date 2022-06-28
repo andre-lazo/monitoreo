@@ -11,10 +11,16 @@ class ObserverController implements ShouldBroadcast
   use Dispatchable, InteractsWithSockets, SerializesModels;
 
   public $message;
+  public $ciudadela;
+  public $guardia;
+  public $id;
 
-  public function __construct($message)
+  public function __construct($message,$ciudadela,$guardia,$id)
   {
       $this->message = $message;
+      $this->ciudadela = $ciudadela;
+      $this->guardia = $guardia;
+      $this->id = $id;
   }
 
   public function broadcastOn()
