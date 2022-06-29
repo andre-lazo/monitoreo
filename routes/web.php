@@ -13,16 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/alertas');
-});
-Route::get('/home', function () {
-    return redirect('/alertas');
-});
+if(Auth::guest()){
+    Route::get('/', function () {
+        return redirect('/login');
+    });
+    Route::get('/home', function () {
+        return redirect('/alertas');
+    });
+    Route::get('/alerta/{data}/{ciudadela}/{guardia}', [App\Http\Controllers\Alerta\AlertaController::class,'alertar']);
+Route::get('/alertas', [App\Http\Controllers\Alerta\AlertaController::class,'consultar_activas']);
+Route::post('/cerrar', [App\Http\Controllers\Alerta\AlertaController::class,'cerrar']);
+}else{
+    Route::get('/', function () {
+        return redirect('/login');
+    });
+}
+
 
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/alerta/{data}/{ciudadela}/{guardia}', [App\Http\Controllers\Alerta\AlertaController::class,'alertar']);
-Route::get('/alertas', [App\Http\Controllers\Alerta\AlertaController::class,'consultar_activas']);
-Route::post('/cerrar', [App\Http\Controllers\Alerta\AlertaController::class,'cerrar']);
+
