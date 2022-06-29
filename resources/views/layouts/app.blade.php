@@ -106,13 +106,13 @@
 
         <!-- Styles -->
        
-<link href="css/app.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
 <!-- Ionicons -->
-<link rel="stylesheet" href="/css/ionicons.min.css">
+<link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
 <!-- Theme style -->
-<link rel="stylesheet" href="/css/adminlte.css">
-<link rel="shortcut icon" href="/img/logo.png">
+<link rel="stylesheet" href="{{asset('css/adminlte.css')}}">
+<link rel="shortcut icon" href="{{asset('img/logo.png')}}">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
        <style>
             body {
