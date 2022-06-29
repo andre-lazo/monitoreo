@@ -155,7 +155,7 @@
                 <center><h1 class="mb-0 mt-2" style="font-size:30px">LOGIN</h1></center>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="login">
                         @csrf
 
                         <div class="form-group row">
